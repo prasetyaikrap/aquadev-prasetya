@@ -1,0 +1,42 @@
+Title:
+Aqua-Developer Day 1 - Software Development Stages. Penting tapi sering disepelekan
+
+Blog Link:
+https://www.showwcase.com/show/17399/aqua-developer-day-1-software-development-stages-penting-tapi-sering-disepelekan
+
+Content:
+Senin, 19 September menjadi hari pertama program eFishery Aqua-Developer Academy - Software Engineer dimulai. Di hari pertama, materi yang disampaikan tidak terlalu teknis namun penting sebagai Software Engineer. Salah satu topik yang dibicarakan adalah sebuah best practice yang sejatinya dibuat untuk memudahkan proses software development namun masih sering dilupakan oleh sebagai developer di Indonesia, yaitu Software Development Stages.
+
+
+[Heading] Software Development Stages
+Aplikasi sebagai pemecah masalah sekaligus menciptakan pengalaman menarik dalam mengakses aplikasi menjadi fokus utama bagi perusahaan atau badan yang memproduksi perangkat lunak (software). Dalam proses pengembangannya akan banyak sekali implementasi-implementasi teknologi baik yang sederhana atau bahkan intensif. Jika tidak terarah, proses pengembangan aplikasi akan menjadi sangat rumit belum lagi pengeluaran biaya selama pengembangan yang tidak sedikit.
+Untuk mewujudkan hasil yang diinginkan, sebenarnya kita telah dituntun menggunakan best practice dalam proses pengembangan aplikasi perangkat lunak. Pada dasarnya seperti pertanyaan dasar "Apa, Siapa, Kapan, Dimana, dan Bagaimana". Mari kita coba bedah Software Development Stages yang menjadi hal dasar dan kiritikal dalam proses pengembangan aplikasi perangkat lunak untuk memperbesar kesuksesan project yang dikerjakan.
+
+
+[Heading] Research
+Pada tahap ini, kita dituntut untuk memahami aplikasi apa yang akan dibuat. Tahap awal ini krusial dilakukan agar proses pengembangan kedepannya tetap terarah dan tidak melenceng dari tujuan aplikasi yang ingin dibuat. Pada tahap ini, beberapa aspek yang akan dibahas antara lain aplikasi apa yang akan dibuat, masalah apa yang berusaha ingin diatasi oleh aplikasi tersebut, siapa user yang akan menggunakan aplikasi tersebut, hingga aspek-aspek pengalaman yang ingin dihadirkan oleh aplikasi tersebut. Khusus bagi perusahaan software house, tahap ini sangat penting untuk menerjemahkan apa yang diekspektasikan oleh klien terhadap aplikasi yang akan dibuat. 
+
+
+[Heading] Requirement Analysis
+Tahap ini merupakan tahap pencurahan ide kreatif terhadap hasil riset yang pada tahap sebelumnya telah dilakukan. Hasil riset yang telah dilakukan sebelumnya kemudian akan dianalisa untuk dibuat sebagai sebuah fitur dan fungsionalitas dengan cara yang kreatif untuk mencapai ekspektasi yang telah ditentukan. Dalam tahap ini beberapa aspek yang akan dibahas antara lain fitur-fitur apa saja yang akan dibuat, bagaimanakah hubungan antar fitur tersebut, serta bagaimana fitur tersebut berfungsi pada aplikasi yang akan dibuat.
+
+
+[Heading] System and Architecture Design
+Setelah perumusan fitur-fitur dan segala ide kreatif telah dirampungkan pada tahap Requirement Analysis, selanjutnya akan dibahas bagaimana sistem yang akan dibuat untuk mengimplementasikan fitur-fitur tersebut. Tahap ini merupakan tahap yang lebih teknis dibandingkan tahap-tahap sebelumnya. Peran Software Engineer dibutuhkan pada tahap ini. Pemilihan dan penggunaan teknologi yang tepat untuk implementasi fitur-fitur tersebut menjadi tanggungjawabnya. Pada tahap ini beberap aspek yang akan dibahas antara lain teknoogi apa yang akan digunakan (bahasa pemrograman, dependencies, framework, dsb), bentuk aplikasi (web, mobile, atau desktop), UI dan UX, database design yang akan digunakan hingga infrastruktur teknologi yang akan digunakan.
+
+
+[Heading] Development
+Tahap ini merupakan tahap per-kodingan dimana pada programmer atau developer memiliki peran yang utama. Tahap ini merupakan tahap implementasi atas semua fitur-fitur yang telah ditetapkan dan diterjemahkan dalam barisan kode. Kita bisa memulai menerapkan backend service, front end solution, implementasi database, hubungan dan aliran data antar aplikasi hingga eksperimentasi terhadap beberapa solusi.
+Tahap ini merupakan waktu yang paling tepat untuk mempelajari hubungan dan behaviour proses bisnis yang akan diterapkan pada aplikasi yang akan dibuat. Proses pengujian terhadap aplikasi juga tepat dilakukan pada tahap ini sebelum nantinya diajukan pada mode produksi (production mode)
+
+[Heading] Deployment
+Setelah seluruh implementasi selesai pada tahap development dan telah teruji dengan baik, saatnya aplikasi kita diajukan ke mode produksi (production mode). Tahap ini merupakan tahap untuk menguji kapasitas infrastruktur teknologi (server) apakah mampu menjalankan aplikasi yang kita buat dengan baik. Tahap ini pula kita dapat mendeteksi lebih dini jika terjadi kegagalan sistem yang terjadi yang disebabkan oleh beberapa faktor mulai dari infrastruktur itu sendiri atau kualitas kode yang diterapkan.
+
+
+[Heading] Maintenance and Evaluation
+Ketika aplikasi telah diluncurkan ke mode produksi dan berjalan dengan baik, tugas kita selanjutnya adalah pemantauan terhadap aplikasi itu sendiri. Tidak selamanya aplikasi akan berjalan baik dari waktu ke waktu. Ada kalanya terdapat masalah yang akan membuat aplikasi kita down, sehingga mengganggu operasional yang bergantung pada aplikasi tersebut. 
+Tahap inilah yang akan meminimalisir kejadian tersebut dengan melakukan monitoring, prevention, dan evaluation terhadap sistem dan aplikasi dari waktu ke waktu. Beberapa aksi mungkin dilakukan seperti patch update, code improvement, atau feature adding untuk memperbaiki, menunjang, atau meningkatkan kualitas aplikasi
+
+
+[Heading] Each company has its own system to follow
+Jika diperhatikan, sebenarnya poin-poin diatas merupakan sebuah best practice dalam Software Development Life Cycle, dan itu tidak salah. Namun eFishery punya pendekatan yang berbeda dalam implementasinya karena memang setiap perusahaan akan punya sistem sendiri yang akan diikuti sebagai bagian dari company culture yang dibangun. Selama sistem tersebut berjalan dengan baik, tidak ada salahnya diterapkan dengan sedikit modifikasi.
