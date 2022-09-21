@@ -1,0 +1,34 @@
+Title:
+Aqua Developer Day 3 - RDBMS with PostgreSQL
+
+Blog Link:
+https://www.showwcase.com/show/17413/aqua-developer-day-3-rdbms-with-postgresql
+
+Content:
+Aqua Developer hari ke tiga kali ini mengangkat tema Relational Database Management System (RDBMS), khususnya menggunakan PostgreSQL sebagai program utamanya
+
+[Heading] Apa itu RDBMS?
+RDBMS atau Relational Database Management System adalah sebuah program yang mampu mengelola database secara relasional. RDBMS menjadi basis dari semua database relasional modern yang ada saat ini seperti MySQL, Oracle, Microsoft SQL, PostgreSQL, dsb. RDBMS menggunakan bahasa SQL untuk melakukan akses terhadap data yang tersimpan di database.
+RDBMS menggunakan konsep database relasional yang berarti hubungan antar data dikelola dalam bentuk sebuah tabel berbentuk kolom dan baris, berbeda dengan Non Relational database yang menggunakan dokumen dan objek dalam pengelolaan data nya.
+Secara dasar, sebuah RDBMS setidaknya memiliki kemampuan akan 3 hal utama yaitu:
+• Membuat dan memanipulasi database dengan Database Definition Language (DDL) menggunakan query seperti CREATE, ALTER, DROP, dsb.
+• Memanipulasi data di dalam database dengan Database Manipulation Language (DML) menggunakan query seperti INSERT, UPDATE, DELETE, dsb.
+• Mengelola transaksi dalam database dengan Data Control Language (DCL) menggunakan query seperti GRANT, REVOKE, COMMIT, dsb.
+PostgreSQL adalah salah satu program RDBMS yang mempu melakukan operasi itu semua.
+
+
+[Heading] Apa dan kenapa menggunakan PostgreSQL?
+PostgreSQL adalah salah satu RDBMS yang cukup populer digunakan di Indonesia. Sitem Relasional, Open-Source, serta kemampuan modifikasi secara bebas menjadikan postgreSQL diminati banyak perusahaan dalam mengelola databasenya. postgreSQL banyak digunakan untuk beban kerja pengolahan data yang kompleks seperti data analisis, aplikasi transaksional, dan aplikasi user intensive interaction yang membutuhkan performa database yang stabil serta aman. Karena sifat inilah postgreSQL cocok digunakan bagi aplikasi berskala besar dan masih mampu melakukan scale-up jika dibutuhkan.
+Paling tidak ada beberapa poin keunggulan yang dapat dipertimbangkan untuk memilih postgreSQL sebagai RDBMS:
+
+[Sub-Heading] Open-Source
+Lisensi yang gratis membuat postgreSQL dapat digunakan oleh berbagai kalangan tanpa halangan biaya. Hal ini yang membuat postgreSQL diadopsi oleh lebih banyak developer apalagi dengan pertimbangan fitur-fitur yang lebih lengkap dibandingkan mySQL.
+
+[Sub-Heading] Wide Programming Language Supported
+Saat ini, postgreSQL telah mendukung berbagai bahasa pemrograman server-side populer untuk mendukung pengembangan backend seperti C/C++, Java, Python, PHP, Javascript, tcl, Go langauge, Ruby, dan masih banyak lagi. Penggunaan bahasa pemrograman yang cukup luas menjadikan postgreSQL lebih fleksibel untuk beberapa production environment
+
+[Sub-Heading] Data Types Support
+Dibandingkan mySQL, postgreSQL mendukung berbagai tipe data yang lebih lengkap. Tipe data seperti JSON dan Array telah didukung pada postgreSQL. Bahkan user dapat menambahkan User-Definded Data Types, dimana pengguna bebas menambah tipe data sendiri sesuai kebutuhan.
+
+[Sub-Heading] Scalable
+postgreSQL memiliki desain sistem yang cocok digunakan dalam skala yang besar. Kemampuan inilah yang membuat postgreSQL mumpuni mengelola data yang kompleks. Dalam hal skalabilitas, postgreSQL juga telah mendukung Database Replication dengan metode Single-Master Replication dan Multi-Master Replication yang membuat database dapat direplikasi secara fleksible ketika harus scale-up atau sekedar melakukan archiving
