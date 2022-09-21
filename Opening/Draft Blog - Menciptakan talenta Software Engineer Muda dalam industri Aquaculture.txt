@@ -1,0 +1,32 @@
+Title:
+eFishery's Aqua Developer - Menciptakan talenta Software Engineer Muda dalam industri Aquaculture
+
+Blog Link:
+https://www.showwcase.com/show/17398/efisherys-aqua-developer-menciptakan-talenta-software-engineer-muda-dalam-industri-aquaculture
+
+Content:
+Kesempatan untuk belajar teknologi menurut saya sangat terbuka lebar akhir-akhir ini. Jalur berbayar bahkan yang beasiswa alias gratis juga menjadi pilihan alternatif bagi kalian yang ingin beralih karir menjadi IT Engineer. Salah satu yang memberi kesempatan emas ini adalah eFishery dalam program eFishery's Aqua Developer Academy.
+
+
+[Heading] What is eFishery?
+Bagi yang belum tahu, eFishery adalah salah satu startup Indonesia yang bergerak di bidang aquaculture. One of the biggest on the aquaculture field. Dibentuk pada tahun 2013 dengan visi menjadikan produk aquaculture seperti ikan dan udang sebagai sumber protein hewani utama secara global dengan teknologi sebagai katalis proses operasionalnya.
+
+Startup Aqua-Tech yang berkantor di Bukit Pakar, Bandung ini sudah membantu lebih dari 6.000 petani budidaya ikan dan udang di lebih dari 250kota di Indonesia. Tidak hanya membantu, eFishery juga mampu mendisrupsi rantai pasok produk aquaculture yang selama ini tidak efisien melalui solusi teknologi yang dibentuknya yaitu eFeeder, eMall, eFarm, dan eFresh.
+Dengan usaha ini, pada Januari 2022 lalu, eFishery mendapatkan pendanaan seri C senilai 90 Juta USD atau 1.3 Triliun rupiah, yang menjadi pendanaan terbesar di dunia yang diperoleh perusahaan rintisan di bidang teknologi aquaculture.
+
+
+[Heading] What is next?
+Melalui pendanaan tersebut, eFishery memiliki misi selanjutnya untuk meningkatkan platform dan layanan yang dibangun serta produk digital eFishery dan menjadikannya sebagai 'koperasi' digital terbesar bagi pembudidaya ikan dan udang di Indonesia.
+eFishery menargetkan sebuah sistem terintegrasi yang mampu mendisrupsi operasional para petani aquaculture tradisional yang dapat meningkatkan hasil budidaya ikan dan udang dengan menawarkan akses terhadap teknologi, pakan, pendanaan, dan akses pasar.
+
+Untuk mewujudkan mimpi tersebut, eFishery tengah berinvestasi secara agresif pada aspek teknologi dan Human Resource dengan mencari talenta-talenta berbakat di bidang Engineering dan pengembangan produk. Salah satu bidang pekerjaan yang sedang berkembang pesat akhir-akhir ini.
+
+
+[Heading] eFishery Academy Aqua-Developer 
+eFishery Academy Aqua-Developer adalah salah satu usaha eFishery untuk berkontirbusi kepada komunitas untuk mencari talenta-talenta berbakat di bidang Software Engineering, demi mewujudkan cita-cita menjadi startup paling berpengaruh di bidang aquaculture.
+
+Program ini adalah sebuah mini-bootcamp yang disusun sedemikian rupa untuk mencetak talenta-talenta software engineer siap kerja dengan memperkenalkan sistem arsitektur teknologi yang dibangun oleh eFishery. Durasi belajar selama 2 minggu dengan kesempatan magang selama 3 bulan menjadi sebuah pengalaman yang berharga khususnya bagi mereka yang ingin memberikan dampak positif kepada masyarakat dengan seragam Software Engineer.
+Tidak hanya teknis, pada program ini juga menitikberatkan pada pengembangan diri yang didesain sedemikian rupa agar mantap untuk terjun langsung sebagai Software Engineer di dunia kerja.
+
+Saat ini telah berjalan di batch 2, dan saya yakin akan masih banyak batch-batch lain yang akan terselenggara untuk kedepannya.
+Nantikan pengalaman saya menjalani program eFishery Aqua-Developer Academy - Software Engineer Batch 2 pada artikel berikutnya.
