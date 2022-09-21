@@ -53,3 +53,15 @@ INSERT INTO orders (customer_id, product_id, order_date, total) VALUES
   (2, 2, '2022-9-23', 19500),
   (3, 4, '2022-9-30', 14000),
   (2, 5, '2022-10-1', 27000);
+
+-- Select All Orders, order by order_id
+SELECT 
+  orders.id AS order_id,
+  orders.order_date AS order_date,
+  customers.fullname AS customer_name,
+  products.name AS order_item,
+  orders.total AS total
+FROM customers
+JOIN orders ON (customers.id = orders.customer_id)
+JOIN products ON (orders.product_id = products.id)
+ORDER BY order_id;
