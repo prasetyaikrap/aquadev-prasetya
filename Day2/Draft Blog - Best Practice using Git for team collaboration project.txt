@@ -1,0 +1,34 @@
+Title:
+Aqua Developer Day 2 - Best Practice using Git for team collaboration project
+
+Blog Link:
+https://www.showwcase.com/show/17406/aqua-developer-day-2-best-practice-using-git-for-team-collaboration-project
+
+Content:
+Git seharusnya menjadi salah satu tools wajib untuk setiap programmer dalam membantu mengelola versioning pada project yang sedang dijalankan. Tools yang wajib dikuasai khususnya ketika bekerja dalam sebuah tim kolaboratif. Disamping penggunaannya yang cukup simple, namun sebenarnya ada gak sih best practice yang bisa diterapkan untuk penggunaan Git ini?
+
+
+[Heading] In Case of Fire
+Sejujurnya saya baru tahu ada meme seperti ini. Dalam situasi genting dan berbahaya, seorang programmer punya approach yang berbeda untuk menyelamatkan diri. Alih-alih langsung lari meninggalkan semua pekerjaan yang ada, We are programmer should do these mandatory step. Doing Git Commit, then Git Push, and finally Leave the building. Ya, buat kita-kita para programmer, menyimpan hasil coding yang aman lebih penting daripada harus mengulanginya dari awal. Well, good jokes anyway.
+Git membantu para programmer untuk menyimpan hasil pekerjaan sekaligus mengelola versi dari pekerjaan kita dari waktu ke waktu. Dengan Git pula, pengelolaan versi akan menjadi lebih simple ketika dikerjakan pada sebuah tim yang kolaboratif sehingga pekerjaan dapat dikelola dengan lebih baik. Lalu adakah best practice penggunaan Git ini?
+
+
+[Heading] Best Practice using Git for Collaborative Project
+Beberapa langkah yang direkomendasikan untuk menggunakan git sebagai best practice yang bisa diterapkan pada pekerjaan kita. Dalam artikel ini saya hanya akan membahas beberapa yang menarik namun fundamental yang perlu dipahami. Terlepas dari poin-poin yang akan saya sebutkan dibawah ini, akan ada banyak lagi pendekatan lainnya agar penggunaan git menjadi lebih optimal pada msing-masing organisasi.
+
+[Sub-Heading] Understanding what Git Command to use
+Memahami dulu bagaiaman Git Command bekerja adalah hal penting yang harus dikuasai dulu. Bagaimana melakukan pengaturan pada konfigurasi, melakukan menaikkan posisi file ke tahap stagging sebelum melakukan commit, mengelola koneksi Git Remote, hingga pengelolaan kualitas kode yang dikerjakan beberapa orang berbeda dalam sebuah tim. Dengan pemahaman yang baik akan membuat proses pengelolaan pekerjaan akan lebih cepat dan murah seiring berjalannya waktu. 
+Git Commands apa saja yang bisa dipakai dapat dibaca selengkapnya di SINI. Salah satu artikel juga pernah menuliskan tentang 10 Git Commands yang seharusnya developer harus tahu
+
+[Sub-Heading] Trunk Based Development
+Sebuah model pengembangan yang juga disebut Source-Control Branching Model, dimana seluruh developer dalam sebuah tim memiliki satu cabang tempat mereka mengimplementasikan kode secara bersama-sama (shared) yang disebut dengan trunk. 
+Konsep ini mengharuskan para developer untuk melakukan pengembangan kode dalam satu cabang saja sehingga tidak mengganggu cabang lainnya. Trunk (biasanya bernama master) menjadi cabang utama tempat bekerja untuk melakukan commit pada hasil pekerjaan.
+Konsep ini menjadi salah satu penunjang dalam implementasi CI/CD (Continuous Integration / Continuous Delivery), dimana basis kode yang dikerjakan akan selalu dapat di lacak termasuk commit history pada setiap perubahan kode. Hal ini akan memastikan basis kode akan selalu ready to release kapanpun jika dibutuhkan.
+
+[Sub-Heading] Commit for every detailed changes that considered as a deployable unit
+Untuk developer individu, termasuk saya, Commit biasanya akan saya lakukan ketika seluruh perubahan telah saya kerjakan untuk menyimpan hasil perubahan tersebut. Cukup menggunakan command :
+git add . && git commit
+secara otomatis semua perubahan, baik itu file dan folder di dalam repository akan disimpan dalam cabang versi yang baru. Namun, jika itu dikerjakan pada sebuah team-based project, malah menjadi sebuah malapetaka.
+Khusus pada project yang menuntut kolaboratif antar developer, commit dilakukan untuk setiap perubahan kecil yang terjadi dengan syarat bahwa perubahan tersebut merupakan hasil final dalam sebuah unit yang siap untuk digunakan. 
+Jadi jika kita punya dua file javascript, masing-masing punya fungsionalitas tertentu. Kita perlu melakukan commit untuk setiap perubahan pada masing-masing file tersebut ketika selesai dikerjakan alih-alih melakukan commit all at once ketika kedua file selesai dikerjakan.
+Pada praktiknya, hal ini akan memudahkan developer untuk melakukan tracing terhadap perubahan kode, me-review kembali kualitas kode pada masing-masing perubahan, serta memudahkan dalam melakukan fixing pada kode yang bermasalah.
