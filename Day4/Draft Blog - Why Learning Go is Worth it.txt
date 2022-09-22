@@ -1,0 +1,38 @@
+Title:
+Aqua Developer Day 4 - Kenapa go bisa jadi 'Worth it' untuk dipelajari
+
+Blog Link:
+https://www.showwcase.com/show/17421/aqua-developer-day-4-kenapa-go-language-bisa-jadi-worth-it-untuk-dipelajari?seriesId=257
+
+Content:
+Go language merupakan open-source programming language yang diciptakan oleh Google, dimana sekarang ini Go sudah menjadi sangat populer diadopsi oleh banyak developer karena keunggulannya dalam performa (high performance), kemudahan dalam pembacaan kode (high readability), dan penulisan kode yang ekspresif (high expressiveness). 
+eFishery mulai bermigrasi untuk mengadopsi Go untuk sebagian besar service yang dibangun di perusahaan. Lalu kenapa sih memilih Go yang cenderung masih berumur jagung ini?
+
+
+[Heading] Go Origins
+Google pertama kali mengembangkan Go pada tahun 2007. Di masa perkembangan Google yang eskponensial kala itu, Go sebenarnya didesain secara internal untuk mengatasi masalah yang ada di dalam Google itu sendiri, yaitu mengelola kode di seluruh ekosistem Google  agar bisa di-compile di seluruh mesin secara parallel. 
+Untuk mencapai tujuan tersebut, Googlers Robert Griesemer, Rob Pike dan Ken Thompson berusaha menciptakan solusi dengan mendesain bahasa pemrograman yang baru yang disebut dengan Go,  yang merupakan sebuah bahasa hasil kombinasi bahasa C++, Java, dan Python dengan mengambil fitur-fitur terbaik dari bahasa pemorgraman tersebut secara statis maupun dinamis.
+
+
+[Heading] Benefit to learn Go now
+Sejak dirilis November 2009, kepopuleran Go semakin meningkat secara eksponensial. Go dianggap sangat efisien dalam proses pengembangan software karena memang Go spesifik di desain untuk itu. Ada beberapa keunggulan utama yang dirasakan ketika menggunakan Go sebagai core programming language
+
+[Heading2] Go Syntax and Feature
+Go merupakan hasil perpaduan antara C++, Java dan Python. Para developer baru tidak perlu mempelajari syntax dan paradigma pengkodean yang baru karena telah diadaptasi dari ketiga bahasa pemrograman tersebut sehingga proses adaptasi dengan Go akan menjadi lebih cepat terutama bagi developer C++ dan Java.
+Selain itu, Go didesain untuk ditulis dengan syntax minimalis dengan tujuan kemudahan dalam menulis dan membaca kode meskipun ditulis oleh developer berbeda. It's still look the same, familiar, and easy to read.
+Dari segi fitur, Go sudah mendukung developer dalam beberapa hal. Memang Go memerlukan compiler untuk menjalankan kodenya, namun hal ini pula yang membuat Go berjalan efisien karena compiler-nya didesain untuk menganalisa dependency dengan cepat dan menghindari pembacaan file yang sama berulang kali, berbeda dengan apa yang terjadi pada C/C++
+Fitur-fitur lainnya seperti optimasi penggunaan RAM dan memory management juga telah dikelola oleh Go secara otomatis sehingga proses development semakin simple namun disaat bersamaan mampu meningkatkan performa aplikasi secara signifikan
+
+[Heading2] Kemudahan dalam implementasi Concurrent Programming
+C/C++ dan Java memiliki kemampuan dalam implementasi concurrent programming dimana programmer dapat menjalankan multi-function program yang berjalan secara simultan dengan mengatur membuat multi thread process sehingga program dapat berjalan dalam mode multi thread dan berbagi memory ketika program berjalan. Namun disaat bersamaan, metode ini juga punya kelemahan dan bug tersendiri.
+Go punya alternatif untuk implementasi concurrent programming. Alih-alih menggunakan Thread, Go menggunakan goroutines untuk mengelolanya. Metode ini menurunkan ketergantungan aplikasi terhadap hardware usage secara signifikan. Menjalankan sepuluh ribu goroutines dalam satu aplikasi sudah menjadi standar pada setiap aplikasi yang berjalan menggunakan Go. 
+Selain itu, goroutines berkomunikasi satu sama lain menggunakan channel yang menyederhanakan proses komunikasi yang ditranslasikan kedalam sebuah kode.
+
+[Heading2] Mendukung fleksibelitas dan skalabilitas tim development
+Go is flexible, dimana Go dapat diimplementasikan pada aplikasi yang paling sederhana hingga kompleks, mendukung low-level dan high-level programming secara default. Dibantu dengan pemahaman syntax dan fitur yang sebenarnya tidak terlalu baru, sehingga bisa diadopsi cukup mudah. 
+Go juga baik digunakan untuk network server dan sudah terbukti unggul dalam cloud computing system. Oleh karena itulah banyak program backend yang mulai menggunakan Go. Implementasi microservice juga telah terbukti dapat berjalan baik seperti penggunaan Docker Container dan Kubernetes.
+Dalam hal skalabilitas, Go cocok digunakan baik dalam tim kecil sampai enterprise. Hal ini snagat berguna ketika kita tidak tahu di masa depan akan sebesar apa aplikasi yang akan kita bangun. Kasus ini tidak akan cocok bagi beberapa dynamic-typed programming language seperti Python dan Ruby yang lebih cocok digunakan tim beranggotakan 1 hingga dua programmer.
+
+
+[Heading] Series tentang Go
+Masih banyak hal yang harus saya pelajari mengenai Go. It's new language, still updating, dan masih punya beberapa kelemahan yang diharapkan bisa dioptimasi seiring berjalannya waktu. Jika ada waktu, Series tentang Go termasuk tutorial dasar dan implementasinya akan dibuat di masa depan.
