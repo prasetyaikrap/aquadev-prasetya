@@ -1,0 +1,19 @@
+Case 1
+Petani memiliki uang 100.000 lalu barang yang ada di point eFishery sebagai berikut ini:
+ID  Product                 Harga
+1   Benih Lele              50.000
+2   Pakan Lele Cap Menara   25.000
+3   Probiotik A             75.000
+4   Probiotik Nila B        10.000
+5   Pakan Nila              20.000
+6   Benih Nila              20.000
+7   Cupang                  5.000
+8   Benih Nila              30.000
+9   Benih Cupang            10.000
+10  Probiotik B             10.000
+
+Dengan data diatas:
+1. Buat sebuah algortima agar petani dapat membeli barang paling banyak dengan jumlah uang Rp. 100.000.
+Masing-masing item hanya dapat dibeli sebanyak 1 kali dalam 1 transaksi
+2. Buat fungsi untuk menemukan barang dengan harga paling murah dan paling mahal
+3. Buat fungsi untuk menampilkan barang dengan harga tertentu (ex. Rp. 10.000)
