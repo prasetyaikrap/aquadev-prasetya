@@ -15,13 +15,6 @@ type Product struct {
 
 type Products []Product
 
-type findByPriceReturn struct {
-	status string
-	data Products
-	successMessage string
-	errorMessage string
-}
-
 func main() {
 	//List of product
 	productList := Products{
