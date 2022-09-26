@@ -122,7 +122,6 @@ func (p Products) findProductById(strid string) Product {
 	for _, product := range p {
 		if product.Id == id {
 			return product
-			break
 		}
 	}
 	return Product{}
