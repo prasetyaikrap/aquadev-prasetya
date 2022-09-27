@@ -27,23 +27,43 @@ func (handler UserHandler) CreateUser(c echo.Context) error {
 	user, err := handler.userCases.CreateUser(req)
 
 	if err != nil {
-		return err
+		return c.JSON(http.StatusBadRequest, entity.ErrorResponse{
+			Code: http.StatusBadRequest,
+			Message: "Create user failed",
+			Error: err.Error(),
+		})
 	}
 
-	return c.JSON(201, user)
+	return c.JSON(http.StatusCreated, entity.SuccessResponse{
+		Code: http.StatusCreated,
+		Message: "User created successfully",
+		Data: user,
+	})
 }
 
 func (handler UserHandler) GetAllUser(c echo.Context) error{
 	users, err := handler.userCases.GetAllUser()
 	if err != nil {
-		return c.String(http.StatusBadRequest, "Get users failed. Something is wrong.")
+		return c.JSON(http.StatusBadRequest, entity.ErrorResponse{
+			Code: http.StatusBadRequest,
+			Message: "Get users Failed",
+			Error: err.Error(),
+		})
 	}
 
 	if len(users) <= 0 {
-		return c.String(http.StatusNotFound, "Cannot get all users, users is empty or does not exist")
+		return c.JSON(http.StatusNotFound, entity.ErrorResponse{
+			Code: http.StatusNotFound,
+			Message: "Get users Failed. No users found",
+			Error: err.Error(),
+		})
 	}
 
-	return c.JSON(200, users)
+	return c.JSON(http.StatusOK, entity.SuccessResponse{
+		Code: http.StatusOK,
+		Message: "Users found",
+		Data: users,
+	})
 }
 
 func (handler UserHandler) GetUserById(c echo.Context) error {
@@ -51,37 +71,68 @@ func (handler UserHandler) GetUserById(c echo.Context) error {
 	user, err := handler.userCases.GetUserById(intId)
 
 	if err != nil {
-		return c.String(http.StatusBadRequest, "Get user by ID failed")
+		return c.JSON(http.StatusBadRequest, entity.ErrorResponse{
+			Code: http.StatusBadRequest,
+			Message: "Get user Failed",
+			Error: err.Error(),
+		})
 	}
 
 	if user.Id == 0 {
-		return c.String(http.StatusNotFound, "Process Failed. User not found or does not exist")
+		return c.JSON(http.StatusNotFound, entity.ErrorResponse{
+			Code: http.StatusNotFound,
+			Message: "Get user Failed. No user found",
+			Error: err.Error(),
+		})
 	}
 
-	return c.JSON(200, user)
+	return c.JSON(http.StatusOK, entity.SuccessResponse{
+		Code: http.StatusOK,
+		Message: "User found",
+		Data: user,
+	})
 }
 
 func (handler UserHandler) UpdateUser(c echo.Context) error {
 	req := entity.UpdateUserRequest{}
 	if err := c.Bind(&req); err != nil {
-		return err
+		return c.JSON(http.StatusBadRequest, entity.ErrorResponse{
+			Code: http.StatusBadRequest,
+			Message: "Invalid Request Body",
+			Error: err.Error(),
+		})
 	}
 
 	intId, _ := strconv.Atoi(c.Param("id"))
 	user, err := handler.userCases.UpdateUser(req, intId)
 	
 	if err != nil {
-		return c.String(http.StatusBadRequest, "Update user failed")
+		return c.JSON(http.StatusBadRequest, entity.ErrorResponse{
+			Code: http.StatusBadRequest,
+			Message: "Update user failed",
+			Error: err.Error(),
+		})
 	}
 
-	return c.JSON(http.StatusOK, user)
+	return c.JSON(http.StatusOK, entity.SuccessResponse{
+		Code: http.StatusOK,
+		Message: "User updated successfully",
+		Data: user,
+	})
 }
 
 func (handler UserHandler) DeleteUser(c echo.Context) error {
 	intId, _ := strconv.Atoi(c.Param("id"))
 	err := handler.userCases.DeleteUser(intId)
 	if err != nil {
-		return c.String(http.StatusBadRequest, "Delete user failed.")
+		return c.JSON(http.StatusBadRequest, c.JSON(http.StatusBadRequest, entity.ErrorResponse{
+			Code: http.StatusBadRequest,
+			Message: "Delete user failed",
+			Error: err.Error(),
+		}))
 	}
-	return c.String(http.StatusOK, "User deleted")
+	return c.JSON(http.StatusOK, entity.SuccessResponse{
+		Code: http.StatusOK,
+		Message: "User deleted successfully",
+	})
 }
