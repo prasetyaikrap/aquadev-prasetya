@@ -8,6 +8,10 @@ import (
 )
 
 type (
+	IProduct interface{
+		findById(id int) Product
+	}
+
 	Product struct{
 		Id int `json:"id"`
 		Name string `json:"name"`
@@ -16,7 +20,19 @@ type (
 	}
 
 	Products []Product
-) 
+
+	SuccessResponse struct {
+		Code int
+		Message string
+		Data interface{}
+	}
+
+	ErrorResponse struct {
+		Code int
+		Message string
+		Error string
+	}
+)
 
 var (
 	products = Products{}
@@ -24,7 +40,11 @@ var (
 )
 
 func homeAPI(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello World")
+		return c.JSON(http.StatusOK, SuccessResponse{
+			Code: http.StatusOK,
+			Message: "API is Active",
+			Data: "Home API",
+		})
 }
 
 func createProduct(c echo.Context) error {
@@ -32,37 +52,73 @@ func createProduct(c echo.Context) error {
 	if dataQuery == "bulk" {
 		p := &Products{}
 		if err := c.Bind(p); err != nil {
-			return err
+			return c.JSON(http.StatusBadRequest, ErrorResponse{
+				Code: http.StatusBadRequest,
+				Message: "Invalid request body",
+				Error: err.Error(),
+			})
 		}
 		for _, product := range *p {
 			product.Id = productId
 			products = append(products, product)
 			productId++
 		}
-		return c.String(http.StatusCreated, "Bulk product created Success")
+		return c.JSON(http.StatusCreated, SuccessResponse{
+			Code: http.StatusCreated,
+			Message: "Bulk products created successfully",
+			Data: p,
+		})
 	} else {
 		p := &Product{
 			Id: productId,
 		}
 		if err := c.Bind(p); err != nil {
-			return err
+			return c.JSON(http.StatusBadRequest, ErrorResponse{
+				Code: http.StatusBadRequest,
+				Message: "Invalid request body",
+				Error: err.Error(),
+			})
 		}
 		products = append(products, *p)
 		productId++
-		return c.String(http.StatusCreated, "Product created successfully")
+		return c.JSON(http.StatusCreated, SuccessResponse{
+			Code: http.StatusCreated,
+			Message: "Product created successfully",
+			Data: p,
+		})
 	}
 }
 
 func getProducts(c echo.Context) error {
-	return c.JSON(http.StatusOK, products)
+	if len(products) <= 0 {
+		c.JSON(http.StatusBadRequest, ErrorResponse{
+				Code: http.StatusNotFound,
+				Message: "Get products failed.",
+				Error: "Products is empty",
+			})
+	}
+	return c.JSON(http.StatusOK, SuccessResponse{
+		Code: http.StatusOK,
+		Message: "Products found",
+		Data: products,
+	})
 }
 
 func getProductById(c echo.Context) error {
-	product := products.findProductById(c.Param("id"))
+	intId, _ := strconv.Atoi(c.Param("id"))
+	product := products.findById(intId)
 	if product.Id != 0 {
-		return c.JSON(http.StatusOK, product)
+		return c.JSON(http.StatusOK, SuccessResponse{
+			Code: http.StatusOK,
+			Message: "Product found",
+			Data: product,
+		})
 	} else {
-		return c.String(http.StatusNotFound, "Product not found or doesnt exist")
+		return c.JSON(http.StatusNotFound, ErrorResponse{
+			Code: http.StatusNotFound,
+			Message: "Get product failed",
+			Error: "Product not found or does not exist",
+		})
 	}
 }
 
@@ -73,13 +129,21 @@ func updateProductById(c echo.Context) error {
 	if err := c.Bind(pd); err != nil {
 		return err
 	}
-	pIndex := indexOfProduct(intid, products)
+	pIndex := indexOf(intid, products)
 	if pIndex != -1 {
 		pd.Id = products[pIndex].Id
 		products[pIndex] = *pd
-		return c.String(http.StatusOK, "Update Success")
+		return c.JSON(http.StatusOK, SuccessResponse{
+			Code: http.StatusOK,
+			Message: "Product updated successfully",
+			Data: products[pIndex],
+		})
 	}
-	return c.String(http.StatusNotFound, "Update Failed. Product not found or does not exist")
+	return c.JSON(http.StatusNotFound, ErrorResponse{
+		Code: http.StatusNotFound,
+		Message: "Update product failed",
+		Error: "Product not found",
+	})
 }
 
 func patchProductById(c echo.Context) error {
@@ -88,37 +152,60 @@ func patchProductById(c echo.Context) error {
 			return err
 		}
 	intid,_ := strconv.Atoi(c.Param("id"))
-	pIndex := indexOfProduct(intid, products)
+	pIndex := indexOf(intid, products)
 	if pIndex != -1 {
 		switch m := c.QueryParam("method"); m{
 		case "add-stock":
 			products[pIndex].Quantity = products[pIndex].Quantity + p.Quantity
-			return c.String(http.StatusOK, "Stock added successfully")
+			return c.JSON(http.StatusOK, SuccessResponse{
+				Code: http.StatusOK,
+				Message: "Product stock added successfully",
+				Data: products[pIndex],
+			})
 		case "reduce-stock":
 			products[pIndex].Quantity = products[pIndex].Quantity - p.Quantity
-			return c.String(http.StatusOK, "Stock reduced successfully")
+			return c.JSON(http.StatusOK, SuccessResponse{
+				Code: http.StatusOK,
+				Message: "Product stock reduced successfully",
+				Data: products[pIndex],
+			})
 		case "update-price":
 			products[pIndex].Price = p.Price
-			return c.String(http.StatusOK, "Product price updated successfully")
+			return c.JSON(http.StatusOK, SuccessResponse{
+				Code: http.StatusOK,
+				Message: "Product price updated successfully",
+				Data: products[pIndex],
+			})
 		}
 	}
-	return c.String(http.StatusNotFound, "Patch update Failed. Product not found or does not exist")
+	return c.JSON(http.StatusNotFound, ErrorResponse{
+		Code: http.StatusNotFound,
+		Message: "Patch update product failed",
+		Error: "Product not found",
+	})
 }
 
 func deleteProductById(c echo.Context) error {
 	strid := c.Param("id")
 	intid, _ := strconv.Atoi(strid)
-	pIndex := indexOfProduct(intid, products)
+	pIndex := indexOf(intid, products)
 	if pIndex != -1 {
 		copy(products[pIndex:], products[pIndex+1:])
 		products = products[:len(products)-1]
-		return c.String(http.StatusOK, "Delete Success")
+		return c.JSON(http.StatusOK, SuccessResponse{
+			Code: http.StatusOK,
+			Message: "Product Deleted successfully",
+			Data: "Deleted",
+		})
 	} 
-	return c.String(http.StatusNotFound, "Delete Failed. Product id not found or does not exist")
+	return c.JSON(http.StatusNotFound, c.JSON(http.StatusNotFound, ErrorResponse{
+		Code: http.StatusNotFound,
+		Message: "Delete product failed",
+		Error: "Product not found or does not exist",
+	}))
 }
 
-func (p Products) findProductById(strid string) Product {
-	id, _ := strconv.Atoi(strid)
+func (p Products) findById(id int) Product {
 	for _, product := range p {
 		if product.Id == id {
 			return product
@@ -127,7 +214,7 @@ func (p Products) findProductById(strid string) Product {
 	return Product{}
 }
 
-func indexOfProduct(s any, data Products) int {
+func indexOf(s any, data Products) int {
 	for k, v := range data {
 		if v.Id == s {
 			return k
