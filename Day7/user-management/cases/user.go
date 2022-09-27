@@ -9,8 +9,8 @@ type IUserCases interface {
 	CreateUser(user entity.CreateUserRequest) (entity.User, error)
 	GetAllUser() ([]entity.User, error)
 	GetUserById(id int) (entity.User, error)
-	// UpdateUser(userRequest entity.UpdateUserRequest, id int) (entity.User, error)
-	// DeleteUser(id int) error
+	UpdateUser(userRequest entity.UpdateUserRequest, id int) (entity.User, error)
+	DeleteUser(id int) error
 }
 
 type UserCases struct {
@@ -82,4 +82,43 @@ func (cases UserCases) GetUserById(id int) (entity.UserResponse, error) {
 	}
 
 	return userRes, nil
+}
+
+func (cases UserCases) UpdateUser(userReq entity.UpdateUserRequest, id int) (entity.UserResponse, error) {
+	user, err := cases.userRepository.FindById(id)
+	if err != nil {
+		return entity.UserResponse{}, err
+	}
+	updatedUser := entity.User{
+		Id: user.Id,
+		Firstname: userReq.Firstname,
+		Lastname: userReq.Lastname,
+		Email: userReq.Email,
+		Gender: userReq.Gender,
+	}
+	
+	user, err = cases.userRepository.Update(updatedUser)
+	if err != nil {
+		return entity.UserResponse{}, err
+	}
+
+	userRes := entity.UserResponse{
+		Id: user.Id,
+		Firstname: user.Firstname,
+		Lastname: user.Lastname,
+		Email: user.Email,
+		Gender: user.Gender,
+	}
+
+	return userRes, nil
+}
+
+func (cases UserCases) DeleteUser(id int) error {
+	_, err := cases.userRepository.FindById(id)
+	if err != nil {
+		return err
+	}
+
+	err = cases.userRepository.Delete(id)
+	return err
 }

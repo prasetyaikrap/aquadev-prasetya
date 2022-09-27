@@ -15,6 +15,13 @@ type CreateUserRequest struct {
 	Gender 		string 		`json:"gender"`
 }
 
+type UpdateUserRequest struct {
+	Firstname string    `json:"firstname"`
+	Lastname  string    `json:"lastname"`
+	Email     string    `json:"email"`
+	Gender 		string 		`json:"gender"`
+}
+
 type UserResponse struct {
 	Id       	uint64    `json:"id"`
 	Firstname string    `json:"firstname"`

@@ -60,3 +60,28 @@ func (handler UserHandler) GetUserById(c echo.Context) error {
 
 	return c.JSON(200, user)
 }
+
+func (handler UserHandler) UpdateUser(c echo.Context) error {
+	req := entity.UpdateUserRequest{}
+	if err := c.Bind(&req); err != nil {
+		return err
+	}
+
+	intId, _ := strconv.Atoi(c.Param("id"))
+	user, err := handler.userCases.UpdateUser(req, intId)
+	
+	if err != nil {
+		return c.String(http.StatusBadRequest, "Update user failed")
+	}
+
+	return c.JSON(http.StatusOK, user)
+}
+
+func (handler UserHandler) DeleteUser(c echo.Context) error {
+	intId, _ := strconv.Atoi(c.Param("id"))
+	err := handler.userCases.DeleteUser(intId)
+	if err != nil {
+		return c.String(http.StatusBadRequest, "Delete user failed.")
+	}
+	return c.String(http.StatusOK, "User deleted")
+}
