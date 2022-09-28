@@ -6,7 +6,7 @@ import (
 	"user-management/cases"
 	"user-management/entity"
 
-	"github.com/labstack/echo/v4"
+	echo "github.com/labstack/echo/v4"
 )
 
 type UserHandler struct {
@@ -54,8 +54,8 @@ func (handler UserHandler) GetAllUser(c echo.Context) error{
 	if len(users) <= 0 {
 		return c.JSON(http.StatusNotFound, entity.ErrorResponse{
 			Code: http.StatusNotFound,
-			Message: "Get users Failed. No users found",
-			Error: err.Error(),
+			Message: "Get users Failed",
+			Error: "Users not found",
 		})
 	}
 
@@ -81,8 +81,8 @@ func (handler UserHandler) GetUserById(c echo.Context) error {
 	if user.Id == 0 {
 		return c.JSON(http.StatusNotFound, entity.ErrorResponse{
 			Code: http.StatusNotFound,
-			Message: "Get user Failed. No user found",
-			Error: err.Error(),
+			Message: "Get user Failed.",
+			Error: "User not found",
 		})
 	}
 
