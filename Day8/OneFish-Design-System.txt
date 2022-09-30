@@ -1,0 +1,7 @@
+Design system
+Sebuah design system yang dibuat menjadi standar bagi designer (web, mobile, desktop app)
+untuk membuat desain fitur, tampilan front end dari aplikasi, hingga UI dan UX.
+
+OneFish Design System adalah standar bagi desainer efishery untuk mendesain UI&UX aplikasi
+yang dibangun. 
+Dokumentasi https://zeroheight.com/5f5d88f53/p/75a5e7-onefish-design-system

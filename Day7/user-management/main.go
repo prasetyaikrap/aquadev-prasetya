@@ -7,7 +7,7 @@ import (
 	"user-management/repository"
 	"user-management/route"
 
-	"github.com/labstack/echo/v4"
+	echo "github.com/labstack/echo/v4"
 )
 
 func main() {
